@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Folder - @ViewBag.folder</h1>
+    
+    @foreach(var reference in ViewBag.references){
+        <a href="@reference.href">@reference.name</a>
+        <br/>
+    }
+
+
+
+    <div class="text-center mt-5">
+        <form action="https://localhost:7270/Home/Import" >
+            <label for="file">Оберіть файл JSON для імпорту</label><br />
+            <input type="file" id="file" name="file"/>
+            <input placeholder="file for exporting" type="text" name="fileForExport"/>
+            <input type="submit" />
+        </form>
+       
+    </div>
+</div>
